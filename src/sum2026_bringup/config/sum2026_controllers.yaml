@@ -35,5 +35,5 @@ diff_drive_controller:
 
 arm_joints_controller:
   ros__parameters:
-    joint_names: ["arm_joint1", "arm_joint2"]
+    joints: ["arm_joint1", "arm_joint2"]
     interface_name: "position"
