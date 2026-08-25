@@ -10,10 +10,6 @@ controller_manager:
     diff_drive_controller:
       type: diff_drive_controller/DiffDriveController
 
-    # https://github.com/ros-controls/ros2_controllers/tree/jazzy/forward_command_controller
-    arm_joints_controller:
-      type: forward_command_controller/ForwardCommandController
-
 diff_drive_controller:
   ros__parameters:
     left_wheel_names: ["base_left_wheel_joint"]
@@ -32,8 +28,3 @@ diff_drive_controller:
     linear.x.min_velocity: -1.0
     angular.z.max_velocity: 1.0
     angular.z.min_velocity: -1.0
-
-arm_joints_controller:
-  ros__parameters:
-    joints: ["arm_joint1", "arm_joint2"]
-    interface_name: "position"
