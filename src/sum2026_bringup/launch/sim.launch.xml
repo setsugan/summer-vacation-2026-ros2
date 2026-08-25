@@ -8,6 +8,9 @@
         <param name="robot_description" value="$(command 'xacro $(var urdf_path) use_sim:=true')" />
     </node>
 
+    <node pkg="tf2_ros" exec="static_transform_publisher"
+          args="--frame-id map --child-frame-id odom" />
+
     <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
         <arg name="gz_args" value="$(var world_path) -r" />
     </include>

@@ -7,8 +7,9 @@ Panels:
         - /Global Options1
         - /Status1
         - /Grid1
+        - /Grid1/Offset1
         - /LaserScan1
-      Splitter Ratio: 0.5
+      Splitter Ratio: 0.49857550859451294
     Tree Height: 533
   - Class: rviz_common/Selection
     Name: Selection
@@ -42,12 +43,12 @@ Visualization Manager:
       Name: Grid
       Normal Cell Count: 0
       Offset:
-        X: 0
-        Y: 0
+        X: 4
+        Y: 4
         Z: 0
       Plane: XY
       Plane Cell Count: 10
-      Reference Frame: <Fixed Frame>
+      Reference Frame: map
       Value: true
     - Alpha: 1
       Class: rviz_default_plugins/RobotModel
@@ -121,6 +122,8 @@ Visualization Manager:
           Value: true
         lidar_link:
           Value: true
+        map:
+          Value: true
         odom:
           Value: true
         right_wheel_link:
@@ -141,8 +144,9 @@ Visualization Manager:
               {}
             right_wheel_link:
               {}
-        odom:
-          {}
+        map:
+          odom:
+            {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -225,25 +229,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 22.31977081298828
+      Distance: 21.99836540222168
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.009820224717259407
-        Y: 0.12174562364816666
-        Z: 0.08715184032917023
+        X: 2.0384485721588135
+        Y: -1.1000213623046875
+        Z: 2.3354105949401855
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.164795994758606
+      Pitch: 1.359796166419983
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.273580551147461
+      Yaw: 3.058581590652466
     Saved: ~
 Window Geometry:
   Displays:
