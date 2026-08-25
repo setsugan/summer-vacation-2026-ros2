@@ -1,6 +1,10 @@
 # summer-vacation-2026-ros2
 
+![alt text](img/image.png)
+
 ## simulation
+
+Gazeboを用いたシミュレーションです。
 
 ```bash
 ros2 launch sum2026_bringup sim.launch.xml
