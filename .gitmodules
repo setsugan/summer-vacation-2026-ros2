@@ -1,0 +1,3 @@
+[submodule "src/third_party/map_publisher"]
+	path = src/third_party/map_publisher
+	url = git@github.com:setsugan/map_publisher.git
