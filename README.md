@@ -17,4 +17,4 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/di
 ## 使用したツール
 
 - sdf2map（sdfからoccupancygridを生成する）
-https://github.com/atinfinity/map2sdf
+https://github.com/atinfinity/sdf2map
