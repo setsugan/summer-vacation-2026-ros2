@@ -1,6 +1,6 @@
 # summer-vacation-2026-ros2
 
-![alt text](img/image.png)
+![alt text](documents/images/gazebo.png)
 
 ## simulation
 
