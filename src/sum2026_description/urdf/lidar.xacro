@@ -17,9 +17,7 @@
                 <cylinder radius="${lidar_radius}" length="${lidar_height}" />
             </geometry>
             <origin xyz="0 0 ${lidar_height / 2.0}" rpy="0 0 0" />
-            <material name="green">
-                <color rgba="0 0.8 0 1" />
-            </material>
+            <material name="green" />
         </visual>
         <collision>
             <geometry>
