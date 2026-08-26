@@ -11,7 +11,7 @@
 
     <node_container pkg="rclcpp_components" exec="component_container" name="map_container" namespace="/">
         <!-- 地図 -->
-        <composable_node pkg="map_publisher" plugin="map_publisher::MapPublisher" name="map_publisher">
+        <composable_node pkg="map_publisher" plugin="map_publisher::map_publisher" name="map_publisher">
             <param name="map_yaml_path" value="$(var map_yaml_path)" />
         </composable_node>
     </node_container>
