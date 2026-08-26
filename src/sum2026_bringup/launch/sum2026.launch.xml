@@ -1,10 +1,18 @@
 <launch>
     <let name="urdf_path" value="$(find-pkg-share sum2026_description)/urdf/sum2026.urdf.xacro" />
     <let name="rviz_config_path" value="$(find-pkg-share sum2026_description)/rviz/urdf_config.rviz" />
+    <let name="map_yaml_path" value="$(find-pkg-share sum2026_bringup)/map/map.yaml" />
 
     <node pkg="robot_state_publisher" exec="robot_state_publisher">
         <param name="robot_description" value="$(command 'xacro $(var urdf_path) use_sim:=$(var use_sim)')" />
     </node>
 
     <node pkg="rviz2" exec="rviz2" output="screen" args="-d $(var rviz_config_path)" />
+
+    <node_container pkg="rclcpp_components" exec="component_container" name="map_container" namespace="/">
+        <!-- 地図 -->
+        <composable_node pkg="map_publisher" plugin="map_publisher::MapPublisher" name="map_publisher">
+            <param name="map_yaml_path" value="$(var map_yaml_path)" />
+        </composable_node>
+    </node_container>
 </launch>

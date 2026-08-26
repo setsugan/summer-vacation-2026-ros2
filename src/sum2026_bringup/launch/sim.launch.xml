@@ -6,7 +6,7 @@
 
     <include file="$(find-pkg-share sum2026_bringup)/launch/sum2026.launch.xml" />
 
-    <node pkg="tf2_ros" exec="static_transform_publisher" args="--frame-id map --child-frame-id odom" />
+    <node pkg="tf2_ros" exec="static_transform_publisher" args="--x -4 --y -4 --frame-id map --child-frame-id odom" />
 
     <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py" />
 
