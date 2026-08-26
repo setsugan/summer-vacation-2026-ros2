@@ -1,19 +1,14 @@
 <launch>
-    <let name="urdf_path" value="$(find-pkg-share sum2026_description)/urdf/sum2026.urdf.xacro" />
+    <let name="use_sim" value="true" />
     <let name="gazebo_config_path" value="$(find-pkg-share sum2026_bringup)/config/gazebo_bridge.yaml" />
-    <let name="rviz_config_path" value="$(find-pkg-share sum2026_description)/rviz/urdf_config.rviz" />
     <let name="world_path" value="$(find-pkg-share sum2026_bringup)/worlds/sum2026_world.sdf" />
+    <let name="gz_args" value="$(var world_path) -r" />
 
-    <node pkg="robot_state_publisher" exec="robot_state_publisher">
-        <param name="robot_description" value="$(command 'xacro $(var urdf_path) use_sim:=true')" />
-    </node>
+    <include file="$(find-pkg-share sum2026_bringup)/launch/sum2026.launch.xml" />
 
-    <node pkg="tf2_ros" exec="static_transform_publisher"
-          args="--frame-id map --child-frame-id odom" />
+    <node pkg="tf2_ros" exec="static_transform_publisher" args="--frame-id map --child-frame-id odom" />
 
-    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
-        <arg name="gz_args" value="$(var world_path) -r" />
-    </include>
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py" />
 
     <node pkg="ros_gz_sim" exec="create" args="-topic robot_description -x -4 -y -4" />
 
@@ -23,6 +18,4 @@
 
     <node pkg="controller_manager" exec="spawner" args="joint_state_broadcaster" />
     <node pkg="controller_manager" exec="spawner" args="diff_drive_controller" />
-
-    <node pkg="rviz2" exec="rviz2" output="screen" args="-d $(var rviz_config_path)" />
 </launch>
